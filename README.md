@@ -1,51 +1,52 @@
-#✈️ TripMate AI — A Multi-Agent Travel Planner
+# ✈️ TripMate AI — A Multi-Agent Travel Planner
 
 TripMate AI is an open-source, AI-powered travel planner that turns a simple natural-language trip request into a complete travel plan — including flight suggestions, hotel recommendations, and a day-by-day itinerary.
 
-Powered by a multi-agent workflow built with LangGraph, LangChain, and FastAPI, TripMate AI coordinates specialized agents to research, plan, and present your trip in one seamless experience.
+Powered by a multi-agent workflow built with <big>LangGraph</big>, LangChain, and FastAPI, TripMate AI coordinates specialized agents to research, plan, and present your trip in one seamless experience.
 
-##🧠 Why This Project?
+---
+
+## 🧠 Why This Project?
+
 Planning a trip usually means jumping between multiple websites, spreadsheets, and tools. TripMate AI brings everything into one intelligent pipeline:
 
-###✈️ A flight-search agent
-
-###🏨 A hotel-research agent
-
-###🗺️ An itinerary-planning agent
-
-###📝 A final response agent
+- <big>✈️ A flight-search agent</big>
+- <big>🏨 A hotel-research agent</big>
+- <big>🗺️ An itinerary-planning agent</big>
+- <big>📝 A final response agent</big>
 
 All coordinated through a LangGraph workflow — so you can focus on the journey, not the logistics.
 
+---
 
-##✨ Features
-✈️ Real-time flight research using AviationStack
+## ✨ Features
 
-🏨 Smart hotel suggestions via Tavily search
+- ✈️ Real-time flight research using **AviationStack**
+- 🏨 Smart hotel suggestions via **Tavily search**
+- 🧠 Multi-agent orchestration with **LangGraph**
+- 📝 Structured, human-readable travel itineraries
+- 🌐 FastAPI backend with a clean web interface
+- 💾 Persistent conversation state using **PostgreSQL**
+- ⚡ Fast, LLM-powered responses with **Groq**
 
-🧠 Multi-agent orchestration with LangGraph
+---
 
-📝 Structured, human-readable travel itineraries
+## 🛠️ Tech Stack
 
-🌐 FastAPI backend with a clean web interface
+| Category        | Tools & Services                       |
+|-----------------|----------------------------------------|
+| Language        | Python 3.10+                           |
+| Backend         | FastAPI, LangGraph, LangChain          |
+| Frontend        | Jinja2 + HTML/CSS/JavaScript           |
+| LLM Provider    | Groq                                   |
+| Database        | PostgreSQL                             |
+| APIs            | AviationStack, Tavily                  |
 
-💾 Persistent conversation state using PostgreSQL
+---
 
-⚡ Fast, LLM-powered responses with Groq
+## 📁 Project Structure
 
-
-##🛠️ Tech Stack
-Category	Tools & Services
-Language	Python 3.10+
-Backend	FastAPI, LangGraph, LangChain
-Frontend	Jinja2 + HTML/CSS/JavaScript
-LLM Provider	Groq
-Database	PostgreSQL
-APIs	AviationStack, Tavily
-
-
-##📁 Project Structure
-text
+```text
 .
 ├── app.py                # FastAPI entry point
 ├── backend.py            # LangGraph travel workflow
@@ -53,9 +54,8 @@ text
 ├── static/               # Static assets (CSS, JS)
 ├── templates/            # HTML templates
 └── tools/                # Flight & web search integrations
-
-##🚀 Getting Started
-###Prerequisites
+🚀 Getting Started
+Prerequisites
 Python 3.10 or newer
 
 PostgreSQL up and running
@@ -68,8 +68,7 @@ Tavily
 
 AviationStack
 
-
-##🔐 Environment Variables
+🔐 Environment Variables
 Create a .env file in the project root:
 
 env
@@ -78,14 +77,12 @@ GROQ_API_KEY=your_groq_api_key
 AVIATIONSTACK_API_KEY=your_aviationstack_api_key
 TAVILY_API_KEY=your_tavily_api_key
 DEFAULT_ORIGIN_IATA=DAC   # optional, fallback origin airport
-
-##📦 Installation
+📦 Installation
 bash
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
-##▶️ Running the App
+▶️ Running the App
 Start the FastAPI server:
 
 bash
@@ -93,19 +90,16 @@ python app.py
 Then open your browser at:
 👉 http://127.0.0.1:8000/
 
-
-##📡 API Endpoints
+📡 API Endpoints
 Method	Endpoint	Description
 GET	/health	Health check
 POST	/api/travel	Submit a travel plan request
-###Example Request
+Example Request
 bash
 curl -X POST http://127.0.0.1:8000/api/travel \
   -H "Content-Type: application/json" \
   -d '{"message":"Plan a 3-day trip to Tokyo with a budget of $1200"}'
-
-
-##🔁 How the Workflow Works
+🔁 How the Workflow Works
 User submits a travel request.
 
 The flight agent gathers flight data.
@@ -116,8 +110,7 @@ The itinerary agent builds a practical day-by-day plan.
 
 The final agent compiles everything into a polished, readable response.
 
-
-##🤝 Contributing
+🤝 Contributing
 Contributions are welcome! Whether you want to add new travel features, improve the UI, or fix bugs:
 
 Fork the repository
@@ -128,10 +121,8 @@ Make your changes
 
 Open a pull request
 
-
-##🙏 Acknowledgments
+🙏 Acknowledgments
 Built with modern LLM tooling and real-world travel APIs. This project is a practical example of combining LangGraph agents with real-world applications — and a testament to what open-source AI can do.
 
-
-##📄 License
+📄 License
 This project is open-source and available under the MIT License.
