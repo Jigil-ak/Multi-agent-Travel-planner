@@ -31,3 +31,34 @@ async def get_all_tools():
 
 
 
+#this function returns tavily search tool object
+
+tavily_search_tool = None
+
+async def get_tavily_search_tool():
+    global tavily_search_tool
+    if tavily_search_tool is not None:
+        return
+    tools = await client.get_tools()
+    print("\nAvailable Mcp Tools")
+
+    for tool in tools:
+        print(tool.name)
+
+    tavily_search_tool = next(
+        tool
+        for tool in tools
+        if tool.name == "tavily_search"    
+    )        
+
+#this function is used to call tavily_search tool with a quary in backend.py
+
+async def tavily_mcp_search(query: str):
+    await get_tavily_search_tool()
+    result = await tavily_search_tool.ainvoke(
+        {
+            "query": query
+        }
+    )
+    return result
+    #print(result)
