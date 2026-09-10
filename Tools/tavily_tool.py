@@ -1,3 +1,6 @@
+#after creating mcp client this function is now no longer using upto 2 nd stage 
+#this is keeping as it is for reference
+
 from tavily import TavilyClient
 import os
 from dotenv import load_dotenv
