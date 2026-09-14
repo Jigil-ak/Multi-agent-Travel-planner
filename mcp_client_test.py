@@ -21,7 +21,7 @@ client = MultiServerMCPClient(
         },
     }
 )
-
+#to check client is connected to all tools
 async def get_all_tools():
     tools = await client.get_tools()
     print("\nAvailable MCP Tools:\n")
