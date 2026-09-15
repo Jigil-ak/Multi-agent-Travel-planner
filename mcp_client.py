@@ -13,7 +13,7 @@ load_dotenv()
 
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 AVIATIONSTACK_API_KEY = os.getenv("AVIATIONSTACK_API_KEY")
-
+OPENWEATHER_API_KEY = os.getenv("OPENWEATHER_API_KEY ")
 
 client = MultiServerMCPClient(
     {
@@ -30,7 +30,22 @@ client = MultiServerMCPClient(
                  ],
             "env": {
             "AVIATIONSTACK_API_KEY": AVIATIONSTACK_API_KEY,
-        }
+        },
+         "weather": {
+            "transport": "stdio",
+
+            # Use the same Python environment that runs app.py.
+            "command": r"D:\Users\jigil\anaconda3\envs\travel\python.exe",
+
+            # Automatically use custom_weather_mcp_server.py
+            # from the current project directory.
+            "args": [
+                r"D:\Projects\Multi agent Travel planner\Multi-agent-Travel-planner\custom_weather_mcp_server.py"
+            ],
+
+            "env":{
+                "OPENWEATHER_API_KEY" : OPENWEATHER_API_KEY
+            }
     }
     }
 )
